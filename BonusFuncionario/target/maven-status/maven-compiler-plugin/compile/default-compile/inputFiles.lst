@@ -1,10 +1,10 @@
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/calculodebonus/MetodoCalculaBonusDistancia.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/calculodebonus/ProcessadoraBonus.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/calculodebonus/IMetodoCalculaBonus.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/calculodebonus/Bonus.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/projetos01/Main.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/calculodebonus/MetodoCalculoBonusCargo.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/model/Bonus.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/calculodebonus/MetodoCalculaBonusFalta.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/calculodebonus/CalculaBonus.java
-/home/clayton/Dropbox/Exemplos - Java/FuncionarioBonus/src/main/java/br/ufes/model/Funcionario.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/calculodebonus/MetodoCalculoBonusCargo.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/calculodebonus/CalculaBonus.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/model/Funcionario.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/calculodebonus/Bonus.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/calculodebonus/MetodoCalculaBonusDistancia.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/calculodebonus/ProcessadoraBonus.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/calculodebonus/IMetodoCalculaBonus.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/model/Bonus.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/projetos01/Main.java
+/home/ph/git/ufes/GQS-PlanejamentoTestes/BonusFuncionario/src/main/java/br/ufes/calculodebonus/MetodoCalculaBonusFalta.java
