@@ -13,8 +13,7 @@ Cada caso de teste devem a seguinte estrutura:
 - 4 - Resultado obtido pelo teste realizado - O resultado obtido foi o mesmo esperado? Ou algo deu errado?
 - 5 - Passou/Falhou - O resultado obtido foi o mesmo do resultado esperado? Se sim o teste Passou, caso contrário ele falhou.
 
-Primeiramente planeje um conjunto de casos de testes na planilha e só depois  execute-os. Após a execução, registre o resultado da primeira execução  na planilha.
-Depois disso, duplique a planilha e a renomeie para  "Segunda execução", rode novamente os testes e faça as correções  necessárias.
+Primeiramente planeje um conjunto de casos de testes na planilha e só depois  execute-os. Após a execução, registre o resultado da primeira execução  na planilha. Depois disso, duplique a planilha e a renomeie para  "Segunda execução", rode novamente os testes e faça as correções  necessárias.
 
 Observe que um caso de teste deve prever a falha durante a execução do código. Você pode utilizar o recurso de `@Rule` do  Junit, veja exemplos em https://mkyong.com/unittest/junit-4-tutorial-2-expected-exception-test/. 
 
@@ -24,3 +23,7 @@ Faça uma terceira planilha com o nome "Registro de esforço em testes" para o r
 **c)** Na primeira execução, análise e anotações dos resultados
 **d)** Na segunda execução, análise e anotações dos resultados
 **e)** Esforço total em testes
+
+### Planilha
+
+[Planilha Planejamento e execução de testes unitários](https://docs.google.com/spreadsheets/d/1yLH-G5f1_ux21y_INx6CPHZpQjixZLIKWCgiNQiHBaU/edit#gid=0) 
