@@ -27,3 +27,8 @@ Faça uma terceira planilha com o nome "Registro de esforço em testes" para o r
 ### Planilha
 
 [Planilha Planejamento e execução de testes unitários](https://docs.google.com/spreadsheets/d/1yLH-G5f1_ux21y_INx6CPHZpQjixZLIKWCgiNQiHBaU/edit#gid=0) 
+
+------
+
+- **Revisão do código - Atividade de GQS**
+- Maycon R. - 2016204347
