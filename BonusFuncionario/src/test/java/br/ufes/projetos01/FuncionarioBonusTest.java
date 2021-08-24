@@ -2,10 +2,6 @@ package br.ufes.projetos01;
 
 import br.ufes.calculodebonus.ProcessadoraBonus;
 import br.ufes.model.Funcionario;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,27 +14,10 @@ public class FuncionarioBonusTest {
     public FuncionarioBonusTest() {
     }
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-
-    }
-
-    @After
-    public void tearDown() {
-    }
-
     @Test
     public void CT001() throws Exception {
         
-        assertThrows(Exception.class, () -> new Funcionario(null, 998.01, "Gerente") );
+        assertThrows(Exception.class, () -> new Funcionario(null, 998.01, "Gerente", 0, 50) );
         
         
     }
@@ -46,14 +25,14 @@ public class FuncionarioBonusTest {
     @Test
     public void CT002() throws Exception {
         
-        assertThrows(Exception.class, () -> new Funcionario("Pedro", 998, "Gerente") );
+        assertThrows(Exception.class, () -> new Funcionario("Pedro", 0, "Gerente", 0, 50) );
         
     }
     
     @Test
     public void CT003() throws Exception {
         
-        assertThrows(Exception.class, () -> new Funcionario("Pedro", 998.01, null) );
+        assertThrows(Exception.class, () -> new Funcionario("Pedro", 998.01, null, 0, 50) );
         
     }
 
@@ -63,14 +42,13 @@ public class FuncionarioBonusTest {
         String nome = "Pedro";
         double salarioBase = 998.01;
         String cargo = "Gerente";
+        
         Funcionario funcionario = new Funcionario(nome, salarioBase, cargo);
         ProcessadoraBonus pb = new ProcessadoraBonus();
         double salarioEsperado = 1147.9105;
         
-        
         // Agir
         pb.processar(funcionario);
-        
         
         // Afirmar
         assertEquals(nome, funcionario.getNome());
@@ -88,24 +66,16 @@ public class FuncionarioBonusTest {
         double salarioBase = 998.01;
         String cargo = "Gerente";
         int faltas = -10;
-        double salarioEsperado = 1147.9105;
         
-        Funcionario funcionario = new Funcionario(nome, salarioBase, cargo);
-        funcionario.setFaltas(faltas);
-        ProcessadoraBonus pb = new ProcessadoraBonus();
+        // Assert
+        String mensagemEsperada = "\n#4 A quantidade de faltas não pode ser < 0";
+        Exception e = assertThrows(Exception.class, () ->{
+            new Funcionario(nome, salarioBase, cargo, faltas, 0);
+            
+        });
         
+        assertEquals(mensagemEsperada, e.getMessage());
         
-        // Agir
-        pb.processar(funcionario);
-        
-        
-        // Afirmar
-        assertEquals(nome, funcionario.getNome());
-        assertEquals(salarioBase, funcionario.getSalarioBase(), 0.001);
-        assertEquals(cargo, funcionario.getCargo());
-        assertEquals(faltas, funcionario.getFaltas());
-        assertEquals(0, funcionario.getDistanciaMoradia());
-        assertEquals(salarioEsperado, funcionario.getSalario(), 0.001);
     }
     
     @Test
@@ -121,10 +91,8 @@ public class FuncionarioBonusTest {
         funcionario.setFaltas(faltas);
         ProcessadoraBonus pb = new ProcessadoraBonus();
         
-        
         // Agir
         pb.processar(funcionario);
-        
         
         // Afirmar
         assertEquals(nome, funcionario.getNome());
@@ -191,29 +159,18 @@ public class FuncionarioBonusTest {
     
     @Test
     public void CT009() throws Exception {
-        // Organizar
+        // Arrange
         String nome = "Pedro";
         double salarioBase = 998.01;
         String cargo = "Gerente";
         int distancia = -10;
-        double salarioEsperado = 1147.9105;
-        
-        Funcionario funcionario = new Funcionario(nome, salarioBase, cargo);
-        funcionario.setDistanciaMoradia(distancia);
-        ProcessadoraBonus pb = new ProcessadoraBonus();
         
         
-        // Agir
-        pb.processar(funcionario);
+        //String mensagemEsperada = "Distância inválida";
         
-        
-        // Afirmar
-        assertEquals(nome, funcionario.getNome());
-        assertEquals(salarioBase, funcionario.getSalarioBase(), 0.001);
-        assertEquals(cargo, funcionario.getCargo());
-        assertEquals(0, funcionario.getFaltas());
-        assertEquals(distancia, funcionario.getDistanciaMoradia());
-        assertEquals(salarioEsperado, funcionario.getSalario(), 0.001);
+        assertThrows(Exception.class, () -> {
+            new Funcionario(nome, salarioBase, cargo, 0, distancia);
+        }); 
     }
     
     @Test
@@ -478,4 +435,188 @@ public class FuncionarioBonusTest {
         assertEquals(0, funcionario.getDistanciaMoradia());
         assertEquals(salarioEsperado, funcionario.getSalario(), 0.001);
     }
+    
+    /*NOVOS CASOS DE TESTES - MAYCON*/
+    
+    @Test
+    public void CT020() throws Exception {
+        //Arrange
+        String nome = "Pedro";
+        double salarioBase = 998.00;
+        String cargo = "Gerente";
+        double salarioEsperado = 1147.90;
+        int faltas = 0;
+        int distanciaMoradia = 30;
+        
+        Funcionario funcionario = new Funcionario(nome, salarioBase, cargo, faltas, distanciaMoradia);
+        
+        ProcessadoraBonus pb = new ProcessadoraBonus();
+        
+        // Act
+        pb.processar(funcionario);
+        
+        // Assert
+        assertEquals(nome, funcionario.getNome());
+        assertEquals(salarioBase, funcionario.getSalarioBase(), 0.001);
+        assertEquals(cargo, funcionario.getCargo());
+        assertEquals(0, funcionario.getFaltas());
+        assertEquals(30, funcionario.getDistanciaMoradia());
+        assertEquals(salarioEsperado, funcionario.getSalario(), 0.001);     
+    }
+    
+    @Test
+    public void CT021() throws Exception {
+        //Arrange
+        String nome = "Pedro";
+        double salarioBase = 998.00;
+        String cargo = "Gerente de Projetos";
+        double salarioEsperado = 1147.90;
+        int faltas = 0;
+        int distanciaMoradia = 30;
+        
+        Funcionario funcionario = new Funcionario(nome, salarioBase, cargo, faltas, distanciaMoradia);
+        
+        ProcessadoraBonus pb = new ProcessadoraBonus();
+        
+        // Act
+        pb.processar(funcionario);
+        
+        // Assert
+        assertEquals(nome, funcionario.getNome());
+        assertEquals(salarioBase, funcionario.getSalarioBase(), 0.001);
+        assertEquals(cargo, funcionario.getCargo());
+        assertEquals(0, funcionario.getFaltas());
+        assertEquals(30, funcionario.getDistanciaMoradia());
+        assertEquals(salarioEsperado, funcionario.getSalario(), 0.001);     
+    }
+    
+    @Test
+    public void CT022() throws Exception {
+        //Arrange
+        String nome = "Pedro";
+        double salarioBase = 998.00;
+        String cargo = "Gerente";
+        int faltas = 0;
+        int distanciaMoradia = 30;
+        
+        double salarioEsperado = 1147.90;
+        Funcionario funcionario = new Funcionario(nome, salarioBase, cargo, faltas, distanciaMoradia);
+        
+        ProcessadoraBonus pb = new ProcessadoraBonus();
+        
+        // Act
+        pb.processar(funcionario);
+        pb.processar(funcionario);
+        
+        // Assert
+        assertEquals(nome, funcionario.getNome());
+        assertEquals(salarioBase, funcionario.getSalarioBase(), 0.001);
+        assertEquals(cargo, funcionario.getCargo());
+        assertEquals(0, funcionario.getFaltas());
+        assertEquals(30, funcionario.getDistanciaMoradia());
+        assertEquals(salarioEsperado, funcionario.getSalario(), 0.001); 
+    }
+    
+    
+    @Test
+    public void CT023() throws Exception {
+        //Arrange
+        String nome = "Pedro";
+        String cargo = "Gerente";
+        double salarioBase = 998.00;
+        int faltas = 0;
+        int distanciaMoradia = 30;
+        
+        String mensagemEsperada = "Salário base inválido";
+        
+        Exception e = assertThrows(Exception.class, () -> {
+            Funcionario funcionario = new Funcionario(nome, salarioBase, cargo, faltas, distanciaMoradia);
+            funcionario.setSalarioBase(997.00);
+            ProcessadoraBonus pb = new ProcessadoraBonus();
+
+            // Act
+            pb.processar(funcionario);
+        }); 
+        
+        
+//      Assert
+        assertEquals(mensagemEsperada, e.getMessage()); 
+    }
+    
+    @Test
+    public void CT024() throws Exception {
+        //Arrange
+        String nome = "Pedro";
+        String cargo = "Gerente";
+        double salarioBase = 998.00;
+        int faltas = 0;
+        int distanciaMoradia = 30;
+        
+        String mensagemEsperada = "Nome inválido";
+        
+        Exception e = assertThrows(Exception.class, () -> {
+            Funcionario funcionario = new Funcionario(nome, salarioBase, cargo, faltas, distanciaMoradia);
+            funcionario.setNome(null);
+            ProcessadoraBonus pb = new ProcessadoraBonus();
+
+            // Act
+            pb.processar(funcionario);
+        }); 
+        
+        
+//      Assert
+        assertEquals(mensagemEsperada, e.getMessage());  
+    }
+    
+    @Test
+    public void CT025() throws Exception {
+        //Arrange
+        String nome = "Pedro";
+        String cargo = "Gerente";
+        double salarioBase = 998.00;
+        int faltas = 0;
+        int distanciaMoradia = 30;
+        
+        String mensagemEsperada = "Cargo inválido";
+        
+        Exception e = assertThrows(Exception.class, () -> {
+            Funcionario funcionario = new Funcionario(nome, salarioBase, cargo, faltas, distanciaMoradia);
+            funcionario.setCargo("");
+            ProcessadoraBonus pb = new ProcessadoraBonus();
+
+            // Act
+            pb.processar(funcionario);
+        }); 
+        
+        
+//      Assert
+        assertEquals(mensagemEsperada, e.getMessage());   
+    }
+    
+    @Test
+    public void CT026() throws Exception {
+        //Arrange
+        String nome = "Pedro";
+        double salarioBase = 998.00;
+        String cargo = "Gerente";
+        int faltas = 0;
+        int distanciaMoradia = 30;
+        
+        String mensagemEsperada = "Quantidade de faltas inválida";
+        
+        Exception e = assertThrows(Exception.class, () -> {
+            Funcionario funcionario = new Funcionario(nome, salarioBase, cargo, faltas, distanciaMoradia);
+            funcionario.setFaltas(-1);
+            ProcessadoraBonus pb = new ProcessadoraBonus();
+
+            // Act
+            pb.processar(funcionario);
+        }); 
+        
+        
+//      Assert
+        assertEquals(mensagemEsperada, e.getMessage());  
+    }
+    
+    
 }

@@ -8,7 +8,7 @@ public class Main {
     public static void main(String args[]) {
         try {
             Funcionario funcionario = 
-                    new Funcionario("Joao", 20000.00, "Gerente");
+                    new Funcionario("Joao", 20000.00, "Gerente", 0, 60);
 
             funcionario.setFaltas(2);
             funcionario.setDistanciaMoradia(1000);
