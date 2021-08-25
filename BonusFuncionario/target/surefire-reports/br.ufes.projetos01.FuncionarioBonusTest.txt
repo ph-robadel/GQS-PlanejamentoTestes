@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.ufes.projetos01.FuncionarioBonusTest
 -------------------------------------------------------------------------------
-Tests run: 27, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.523 sec <<< FAILURE! - in br.ufes.projetos01.FuncionarioBonusTest
-CT022(br.ufes.projetos01.FuncionarioBonusTest)  Time elapsed: 0.011 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<1147.9> but was:<1297.8>
-	at br.ufes.projetos01.FuncionarioBonusTest.CT022(FuncionarioBonusTest.java:517)
-
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.066 sec - in br.ufes.projetos01.FuncionarioBonusTest

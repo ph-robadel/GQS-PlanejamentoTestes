@@ -165,4 +165,8 @@ public class Funcionario {
 
         return strFuncionario;
     }
+
+    public void limparBonus() {
+        this.bonusRecebidos.clear();
+    }
 }

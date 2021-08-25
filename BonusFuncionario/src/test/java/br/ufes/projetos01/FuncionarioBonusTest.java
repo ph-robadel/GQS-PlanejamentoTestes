@@ -8,6 +8,9 @@ import static org.junit.Assert.*;
 /**
  *
  * @author clayton e Pedro Henrique Robadel
+ * Atv. de Revisão - Maycon R.
+ * https://docs.google.com/document/d/1QFUJd5PcUs7fWbFeCG7x_J9LVLZLwTrS9LiSHw0yB4U/edit?usp=sharing - Link do Documento - Atv. de Revisão
+ * https://docs.google.com/spreadsheets/d/1xnd_1KdGb8b-ETzpsx4Qn41PCdPbyI5MKQa-KkAtEUw/edit?usp=sharing - Link da Planilha - Atv. de Revisão
  */
 public class FuncionarioBonusTest {
 
