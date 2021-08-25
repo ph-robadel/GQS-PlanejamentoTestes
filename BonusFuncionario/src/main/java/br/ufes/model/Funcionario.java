@@ -73,9 +73,9 @@ public class Funcionario {
     }
 
     public void setNome(String nome) throws Exception{
-        this.nome = nome;
         if (nome == null || nome == "") 
             throw new Exception ("Nome inválido");
+        this.nome = nome;
     }
 
     public double getSalarioBase() {
@@ -83,10 +83,10 @@ public class Funcionario {
     }
 
     public void setSalarioBase(double salarioBase) throws Exception{
-        this.salarioBase = salarioBase;
         if(this.salarioBase != 998.00){
             throw new Exception ("Salário base inválido");
         }
+        this.salarioBase = salarioBase;
     }
 
     public int getFaltas() {
@@ -94,9 +94,9 @@ public class Funcionario {
     }
 
     public void setFaltas(int faltas) throws Exception{
-        this.faltas = faltas;
         if (this.faltas < 0)
             throw new Exception ("Quantidade de faltas inválida");
+        this.faltas = faltas;
     }
 
     public int getDistanciaMoradia() {
@@ -104,10 +104,10 @@ public class Funcionario {
     }
 
     public void setDistanciaMoradia(int distanciaMoradia) throws Exception{
-        this.distanciaMoradia = distanciaMoradia;
         if(this.distanciaMoradia < 0){
             throw new Exception ("Distância inválida");
         }
+        this.distanciaMoradia = distanciaMoradia;
     }
 
     public String getCargo() {
@@ -115,9 +115,9 @@ public class Funcionario {
     }
 
     public void setCargo(String cargo) throws Exception{
-        this.cargo = cargo;
         if (cargo == null || cargo=="")
             throw new Exception ("Cargo inválido");
+        this.cargo = cargo;
     }
 
     public double getSalario() {
